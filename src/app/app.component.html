@@ -1,5 +1,5 @@
 <main>
-  <div class="backgroundImage">
+  <div *ngIf="isMobile" class="backgroundImage">
     <img
       [@fade]
       *ngIf="darkTheme"
@@ -13,21 +13,37 @@
       alt="light theme background"
     />
   </div>
-  <header>
-    <a href="">todo</a>
+  <div *ngIf="!isMobile" class="backgroundImage">
+    <img
+      [@fade]
+      *ngIf="darkTheme"
+      src="../assets/images/bg-desktop-dark.jpg"
+      alt="dark theme background"
+    />
+    <img
+      [@fade]
+      *ngIf="!darkTheme"
+      src="../assets/images/bg-desktop-light.jpg"
+      alt="light theme background"
+    />
+  </div>
+  <div class="wrapper">
+    <header>
+      <a href="">todo</a>
 
-    <div class="themeButton" (click)="handleThemeChange()">
-      <img
-        [@fade]
-        *ngIf="darkTheme; else elseButtonContent"
-        src="../assets/images/icon-sun.svg"
-        alt="sun"
-      />
+      <div class="themeButton" (click)="handleThemeChange()">
+        <img
+          [@fade]
+          *ngIf="darkTheme; else elseButtonContent"
+          src="../assets/images/icon-sun.svg"
+          alt="sun"
+        />
 
-      <ng-template #elseButtonContent>
-        <img [@fade] src="../assets/images/icon-moon.svg" alt="moon" />
-      </ng-template>
-    </div>
-  </header>
-  <router-outlet></router-outlet>
+        <ng-template #elseButtonContent>
+          <img [@fade] src="../assets/images/icon-moon.svg" alt="moon" />
+        </ng-template>
+      </div>
+    </header>
+    <router-outlet></router-outlet>
+  </div>
 </main>
