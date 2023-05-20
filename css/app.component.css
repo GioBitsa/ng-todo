@@ -1,0 +1,79 @@
+main {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+main .backgroundImage {
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+main .backgroundImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+main .wrapper header {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto 40px auto;
+}
+main .wrapper header a {
+  color: hsl(0, 0%, 98%);
+  font-size: 27px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+main .wrapper header .themeButton {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+}
+main .wrapper header .themeButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+@media screen and (min-width: 600px) {
+  main .wrapper {
+    padding: 0 40px;
+  }
+  main .wrapper header a {
+    font-size: 30px;
+  }
+  main .wrapper header .themeButton {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (min-width: 900px) {
+  main .wrapper {
+    padding: 0 60px;
+  }
+  main .wrapper header a {
+    font-size: 34px;
+  }
+  main .wrapper header .themeButton {
+    width: 30px;
+    height: 30px;
+  }
+}/*# sourceMappingURL=app.component.css.map */
