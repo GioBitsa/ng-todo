@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/colors.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif, Roboto, "Helvetica Neue", sans-serif;
+}
+
+// constants
+
+body {
+    background-color: $veryLightGrayishBlue;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
