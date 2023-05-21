@@ -9,7 +9,7 @@ import { ThemeService, TodoItemService } from 'src/app/services';
 })
 export class TodoListComponent implements OnInit {
   darkTheme: boolean = false;
-  dataList: TodoItemModel[] = [];
+  dataList: any[] = [];
   loading: boolean = true;
 
   constructor(
@@ -32,5 +32,27 @@ export class TodoListComponent implements OnInit {
 
       this.loading = false;
     });
+  };
+
+  deleteItem = (itemID: string) => {
+    this.todoItemService.deleteSingleItem(itemID).subscribe(
+      () => {
+        console.log('Data deleted successfully!');
+      },
+      (error) => {
+        console.error('Error deletting data!', error);
+      }
+    );
+  };
+
+  changeDone = (itemID: string, value: boolean) => {
+    this.todoItemService.changeDone(itemID, value).subscribe(
+      () => {
+        console.log('Done!');
+      },
+      (error) => {
+        console.error('Error!', error);
+      }
+    );
   };
 }

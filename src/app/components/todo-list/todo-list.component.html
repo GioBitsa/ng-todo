@@ -11,14 +11,16 @@
 >
   <div
     class="singleItem"
-    [class.done]="item.done"
+    [class.done]="item.payload.done"
     *ngFor="let item of dataList"
   >
-    <div class="circle">
+    <div class="circle" (click)="changeDone(item.id, !item.payload.done)">
       <img src="../../../assets/images/icon-check.svg" alt="done" />
     </div>
-    <div class="content">{{ item.text }}</div>
-    <div class="closeButton">
+    <div class="content" (click)="changeDone(item.id, !item.payload.done)">
+      {{ item.payload.text }}
+    </div>
+    <div class="closeButton" (click)="deleteItem(item.id)">
       <span></span>
       <span></span>
     </div>

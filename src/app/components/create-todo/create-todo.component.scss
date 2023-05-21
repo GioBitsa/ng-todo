@@ -3,7 +3,7 @@
 
 .container {
     width: 100%;
-    padding: 15px;
+    padding: 0 15px;
     margin: 0 auto 20px auto;
     background-color: $veryLightGray;
     border-radius: $borderRadiusMd;
@@ -17,8 +17,8 @@
         min-width: 25px;
         height: 25px;
         border-radius: 100%;
-        margin-right: 15px;
         border: 1px solid $lightGrayishBlue;
+        margin-right: 15px;
     }
 
     form {
@@ -28,6 +28,7 @@
     input {
         width: 100%;
         height: 100%;
+        padding: 15px 0;
         background-color: transparent;
         border: none;
         font-size: 16px;
@@ -57,7 +58,7 @@
 
 @media screen and (min-width: 600px) {
     .container {
-        padding: 20px;
+        padding: 0 20px;
 
         .circle {
             width: 30px;
@@ -68,6 +69,7 @@
 
         input {
             font-size: 20px;
+            padding: 20px 0;
         }
     }
 }
