@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoItemModel } from 'src/app/models';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ThemeService, TodoItemService } from 'src/app/services';
 
 @Component({
@@ -12,6 +13,7 @@ export class CreateTodoComponent {
   todoInput: string = '';
 
   constructor(
+    private _snackBar: MatSnackBar,
     public themeService: ThemeService,
     private todoItemService: TodoItemService
   ) {
@@ -29,12 +31,32 @@ export class CreateTodoComponent {
     this.todoItemService.createNewTodo(data).subscribe(
       () => {
         console.log('Data posted successfully!');
+        this.openSuccessSnackBar();
       },
       (error) => {
         console.error('Error posting data:', error);
+        this.openErrorSnackBar();
       }
     );
 
     this.todoInput = '';
+  };
+
+  openSuccessSnackBar = () => {
+    this._snackBar.open('Todo Item is added!', '', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      duration: 2000,
+      panelClass: 'successSnackBar',
+    });
+  };
+
+  openErrorSnackBar = () => {
+    this._snackBar.open('Error! Try again later!', '', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      duration: 2000,
+      panelClass: 'errorSnackBar',
+    });
   };
 }

@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,8 @@ import { AngularFireModule } from '@angular/fire/compat';
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
