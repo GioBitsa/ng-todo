@@ -1,1 +1,26 @@
-<p>todo-list works!</p>
+<mat-spinner
+  *ngIf="loading"
+  [class.darkTheme]="darkTheme"
+  diameter="50"
+></mat-spinner>
+
+<div
+  class="container"
+  [class.darkTheme]="darkTheme"
+  *ngIf="dataList.length > 0"
+>
+  <div
+    class="singleItem"
+    [class.done]="item.done"
+    *ngFor="let item of dataList"
+  >
+    <div class="circle">
+      <img src="../../../assets/images/icon-check.svg" alt="done" />
+    </div>
+    <div class="content">{{ item.text }}</div>
+    <div class="closeButton">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>

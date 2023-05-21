@@ -5,6 +5,8 @@ main {
     position: relative;
     min-height: 100vh;
     padding: 20px 0;
+    background-color: $veryLightGrayishBlue;
+    transition: $themeChangeTransition;
 
     .backgroundImage {
         width: 100%;
@@ -12,7 +14,7 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 1;
 
         img {
             width: 100%;
@@ -29,6 +31,8 @@ main {
         max-width: $maxWidth;
         padding: 0 $smallWrapperPadding;
         margin: 0 auto;
+        position: relative;
+        z-index: 2;
         
         header {
             padding-top: 40px;
@@ -60,6 +64,10 @@ main {
                 }
             }
         }
+    }
+
+    &.darkTheme {
+        background-color: $veryDarkBlue;
     }
 }
 

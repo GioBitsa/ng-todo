@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { TodoItemModel } from '../models';
 
 @Injectable({
@@ -27,7 +26,7 @@ export class TodoItemService {
     });
   }
 
-  getTodoList(): Observable<any> {
-    return this.db.object('/todoItems').valueChanges();
+  getTodoList(): Observable<any[]> {
+    return this.db.list('/todoItems').valueChanges();
   }
 }

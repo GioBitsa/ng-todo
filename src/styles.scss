@@ -32,3 +32,12 @@ ul {
         background-color: #f44336;
     }
 }
+
+mat-spinner {
+    margin: 0 auto;
+    
+
+    &.darkTheme {
+        --mdc-circular-progress-active-indicator-color: white !important;
+    }
+}
